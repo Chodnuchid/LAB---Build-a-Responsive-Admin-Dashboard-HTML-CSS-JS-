@@ -11,9 +11,7 @@ function updateIcon() {
   themeBtn.textContent = body.classList.contains("light") ? "🌞" : "🌙";
 }
 
-if (localStorage.theme === "light") {
-  body.classList.add("light");
-}
+if (localStorage.theme === "light") body.classList.add("light");
 updateIcon();
 
 themeBtn.onclick = () => {
@@ -22,11 +20,29 @@ themeBtn.onclick = () => {
   updateIcon();
 };
 
+// KPI auto update every 5 seconds (assignment requirement)
+function updateKPI() {
+  document.getElementById("rev").innerText =
+    "฿" + (Math.random() * 500000 + 800000).toFixed(0);
+
+  document.getElementById("orders").innerText =
+    Math.floor(Math.random() * 200 + 400);
+
+  document.getElementById("users").innerText =
+    Math.floor(Math.random() * 300 + 900);
+
+  document.getElementById("conv").innerText =
+    (Math.random() * 3 + 3).toFixed(1) + "%";
+}
+
+updateKPI();
+setInterval(updateKPI, 5000);
+
 // Search filter
 document.getElementById("searchInput").addEventListener("keyup", e => {
-  const value = e.target.value.toLowerCase();
+  const val = e.target.value.toLowerCase();
   document.querySelectorAll("#orderTable tbody tr").forEach(row => {
-    row.style.display = row.innerText.toLowerCase().includes(value)
+    row.style.display = row.innerText.toLowerCase().includes(val)
       ? ""
       : "none";
   });
@@ -51,7 +67,7 @@ document.getElementById("sortAmount").onclick = () => {
 const ctx = document.getElementById("salesChart").getContext("2d");
 const data = [120, 180, 150, 210, 170, 190];
 
-data.forEach((value, i) => {
+data.forEach((v, i) => {
   ctx.fillStyle = "#a855f7";
-  ctx.fillRect(i * 60 + 20, 200 - value, 30, value);
+  ctx.fillRect(i * 60 + 20, 200 - v, 30, v);
 });

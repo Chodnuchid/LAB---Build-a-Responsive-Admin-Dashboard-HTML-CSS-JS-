@@ -101,26 +101,17 @@ body {
   gap: 8px;
 }
 
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 2px dashed var(--accent);
-}
-
 .avatar-letter {
   width: 36px;
   height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, #a855f7, #22d3ee);
-  color: #ffffff;
+  color: white;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
 }
-
 
 /* KPI */
 .kpis {
