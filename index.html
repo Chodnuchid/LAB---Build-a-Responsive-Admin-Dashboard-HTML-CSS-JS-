@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Zenith – Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+    <div class="brand">THE ZENITH</div>
+
+    <nav>
+      <a class="active">Dashboard</a>
+      <a>Users</a>
+      <a>Orders</a>
+      <a>Products</a>
+      <a>Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+      <button id="toggleSidebar">☰</button>
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Search orders, users, products..."
+      />
+
+      <div class="topbar-right">
+        <span class="notif">🔔<b>3</b></span>
+        <button id="themeToggle">🌙</button>
+
+        <div class="profile">
+          <!-- profile image placeholder -->
+          <div class="avatar-letter">C</div>
+          <span>Chodnuchid</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- KPI Section -->
+    <section class="kpis">
+      <div class="kpi">
+        <h4>Revenue (THB)</h4>
+        <p>฿1,250,000</p>
+      </div>
+      <div class="kpi">
+        <h4>Orders</h4>
+        <p>486</p>
+      </div>
+      <div class="kpi">
+        <h4>Users</h4>
+        <p>1,024</p>
+      </div>
+      <div class="kpi">
+        <h4>Conversion</h4>
+        <p>4.2%</p>
+      </div>
+    </section>
+
+    <!-- Chart -->
+    <section class="chart">
+      <canvas id="salesChart"></canvas>
+    </section>
+
+    <!-- Table -->
+    <section class="table-section">
+      <h3>Recent Orders</h3>
+      <table id="orderTable">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>User</th>
+            <th id="sortAmount">Amount (THB) ⇅</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Galaxy S24</td><td>Somchai</td><td>32000</td><td>2026-01-02</td></tr>
+          <tr><td>Galaxy Z Fold</td><td>Anan</td><td>62000</td><td>2026-01-03</td></tr>
+          <tr><td>Galaxy A55</td><td>Suda</td><td>14500</td><td>2026-01-04</td></tr>
+          <tr><td>Galaxy Tab</td><td>Kanok</td><td>28000</td><td>2026-01-05</td></tr>
+          <tr><td>Galaxy Buds</td><td>Ploy</td><td>5900</td><td>2026-01-06</td></tr>
+          <tr><td>Galaxy Watch</td><td>Narin</td><td>11000</td><td>2026-01-07</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Activity -->
+    <section class="activity">
+      <h3>Recent Activity</h3>
+      <ul>
+        <li>✔ Order completed</li>
+        <li>🆕 New user registered</li>
+        <li>📦 Product shipped</li>
+        <li>💰 Payment received</li>
+        <li>🔁 Order refunded</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
